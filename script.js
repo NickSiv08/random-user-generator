@@ -32,9 +32,9 @@ function generateUser() {
         </div>
         `
       if (fetchedUser.gender === 'female') {
-        document.body.classList.add('rebeccapurple')
+        document.body.backgroundColor = 'rebeccapurple'
       } else {
-        document.body.classList.add('steelblue')
+        document.body.style.backgroundColor = 'steelblue'
       }
     })
 }
