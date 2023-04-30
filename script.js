@@ -2,6 +2,7 @@ const button = document.getElementById('generate')
 const user = document.getElementById('user')
 
 function generateUser() {
+  showSpinner()
   fetch('https://randomuser.me/api/')
     .then((response) => response.json())
     .then((data) => {
@@ -24,7 +25,7 @@ function generateUser() {
                 <span class="font-bold">Phone: </span> ${fetchedUser.phone}
               </p>
               <p class="text-xl">
-                <span class="font-bold">Location: </span> ${fetchedUser.location.city} ${fetchedUser.location.state}
+                <span class="font-bold">Location: </span> ${fetchedUser.location.city} ${fetchedUser.location.country}
               </p>
               <p class="text-xl"><span class="font-bold">Age: </span> ${fetchedUser.dob.age}</p>
             </div>
@@ -36,7 +37,18 @@ function generateUser() {
       } else {
         document.body.style.backgroundColor = 'steelblue'
       }
+      hideSpinner()
     })
 }
+
+function showSpinner() {
+  document.querySelector('.spinner').style.display = 'block'
+}
+
+function hideSpinner() {
+  document.querySelector('.spinner').style.display = 'none'
+}
+
+generateUser()
 
 button.addEventListener('click', generateUser)
