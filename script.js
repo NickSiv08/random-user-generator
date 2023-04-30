@@ -32,7 +32,7 @@ function generateUser() {
         </div>
         `
       if (fetchedUser.gender === 'female') {
-        document.body.backgroundColor = 'rebeccapurple'
+        document.body.style.backgroundColor = 'rebeccapurple'
       } else {
         document.body.style.backgroundColor = 'steelblue'
       }
